@@ -11,7 +11,8 @@
 angular
   .module('eventbriteApp', [
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ui.calendar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
