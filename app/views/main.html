@@ -1,23 +1,47 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<!-- Header of Page -->
+<div>
+  <div>
+    <ul class="nav navbar-header">
+      <li class="eventbrite-logo-spacing">
+        <a href="https://www.eventbrite.com/" style="background-color:#FF8025">
+          <img src="images/eventbrite-logo.png">
+        </a>
+      </li>
+    </ul>
+  </div>    
+  <nav class="collapse navbar-collapse bs-navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="sign-up-button-spacing">
+        <a href="https://www.eventbrite.com/signup/?referrer=%2F%3Fshow_onboarding%3D1&user_type=prebuyer&user_type_sig=AH_ElWFOv0UQ6iJ9ZHiWLW5f59gfoCHjgg" class="header-right" style="font-size:18px;color:#FFFFFF;background-color:#FF8025">Sign Up</a>
+      </li>
+      <li class="log-in-button-spacing">
+        <a href="https://www.eventbrite.com/login/?referrer=%2F%3Fshow_onboarding%3D1" class="header-right" style="font-size:18px;color:#FFFFFF;background-color:#FF8025">Log In</a>
+      </li>
+    </ul>
+  </nav>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<!-- Body of Page -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar" style="background-color:#3D464D">
+      <div>
+        <ul class="events-text">Events</ul>
+      </div>
+      <ul class="nav nav-sidebar">
+        <li ng-repeat="sidebar in eventSources.events" class="sidebar-top-border">
+          <a href={{sidebar.url}} class="sidebar-text"> 
+            {{sidebar.title}} <img class="sidebar-icons" src={{sidebar.rendering}}>
+          </a>
+        </li>
+        <li class="sidebar-top-border">
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="well calendar-color">
+        <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+       </div>
+    </div>
+  </div>
 </div>
