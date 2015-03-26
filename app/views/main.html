@@ -29,9 +29,9 @@
         <ul class="events-text">Events</ul>
       </div>
       <ul class="nav nav-sidebar">
-        <li ng-repeat="sidebar in eventSources.events" class="sidebar-top-border">
-          <a href={{sidebar.url}} class="sidebar-text"> 
-            {{sidebar.title}} <img class="sidebar-icons" src={{sidebar.rendering}}>
+        <li ng-repeat="eventData in sidebarData" class="sidebar-top-border">
+          <a href={{eventData.url}} class="sidebar-text"> 
+            {{eventData.title}} <img class="sidebar-icons" src={{eventData.image}}>
           </a>
         </li>
         <li class="sidebar-top-border">

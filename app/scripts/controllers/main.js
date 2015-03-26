@@ -8,76 +8,21 @@
  * Controller of the eventbriteApp
  */
 angular.module('eventbriteApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ['$scope','mainFactory', 'eventData', function ($scope, mainFactory, eventData) {
 
+  	// preloaded data from API call for sidebar information
+  	$scope.sidebarData = eventData[1];
+
+  	// data for the calendar
+  	// it includes preloaded data from API call
     $scope.eventSources = {
-	    events: [
-	        {
-	            title: 'Event1',
-	            start: '2015-03-04',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-04-04',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-03-19',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-03-11',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-03-14',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-03-16',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-03-04',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-04-05',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event1',
-	            start: '2015-05-04',
-	            url: 'https://google.com',
-	            rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        },
-	        {
-	            title: 'Event2',
-	            start: '2015-04-05',
-	           	url: 'https://google.com',
-				rendering: 'http://cdn.evbuc.com/images/12757874/22612420638/1/logo.png'
-	        }
-	    ],
+	    events: eventData[0],
 	    color: '#FF8025', 
 	    textColor: '#FFFFFF', 
 	    editable: false
 	};
 
+	// configuration for calendar
     $scope.uiConfig = {
 		calendar: {
 		    height: 500,
@@ -85,4 +30,4 @@ angular.module('eventbriteApp')
 		}
     };
 
-  });
+  }]);
