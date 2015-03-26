@@ -31,7 +31,10 @@
       <ul class="nav nav-sidebar">
         <li ng-repeat="eventData in sidebarData" class="sidebar-top-border">
           <a href={{eventData.url}} class="sidebar-text"> 
-            {{eventData.title}} <img class="sidebar-icons" src={{eventData.image}}>
+            {{eventData.title}} 
+            
+            <img ng-if="eventData.image!= null" class="sidebar-icons" src={{eventData.image}}>
+
           </a>
         </li>
         <li class="sidebar-top-border">
