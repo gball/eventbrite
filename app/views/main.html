@@ -32,9 +32,8 @@
         <li ng-repeat="eventData in sidebarData" class="sidebar-top-border">
           <a href={{eventData.url}} class="sidebar-text"> 
             {{eventData.title}} 
-            
+            <!-- If no image available, then do not ignore following-->
             <img ng-if="eventData.image!= null" class="sidebar-icons" src={{eventData.image}}>
-
           </a>
         </li>
         <li class="sidebar-top-border">
